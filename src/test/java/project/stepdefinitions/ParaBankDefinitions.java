@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
-import starter.UilityFunctions.WaitSeconds;
+import UilityFunctions.WaitSeconds;
 import project.ParaBankRegistration.ParaBankRegistrationActions;
 import project.ParaBankRegistration.ParaBankReigstrationNavigate;
 
