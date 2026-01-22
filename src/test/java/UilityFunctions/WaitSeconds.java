@@ -11,10 +11,6 @@ public class WaitSeconds implements Task {
         this.milliseconds = milliseconds;
     }
 
-    public static WaitSeconds forTime(int milliseconds) {
-        return new WaitSeconds(milliseconds);
-    }
-
     public static WaitSeconds Now() {
         return new WaitSeconds(2000); // Default 5 second wait
     }
