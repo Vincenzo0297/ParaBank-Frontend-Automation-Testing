@@ -53,3 +53,4 @@ public class ParaBankReigstrationNavigate {
             .locatedBy("//*[@id=\"rightPanel\"]/p[contains(text(),'{0}')]");
 
 }
+
