@@ -8,7 +8,6 @@ public class Common {
             Thread.currentThread().interrupt(); // Preserve interrupted status
             System.err.println("Sleep interrupted: " + e.getMessage());
         }
-
     }
 }
 
