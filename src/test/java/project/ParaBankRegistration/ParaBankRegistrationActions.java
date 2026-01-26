@@ -1,5 +1,6 @@
 package project.ParaBankRegistration;
 
+import UilityFunctions.WaitSeconds;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -48,20 +49,17 @@ public class ParaBankRegistrationActions {
     public static Performable validateUserLogin() {
         return Task.where("{0} verify the invalid user login message",
                 actor -> {
-                    String actualMessage = ParaBankReigstrationNavigate.VALIDATE_INVALID_MESSAGE.of("The username and").resolveFor(actor).getText();
+                    String actualMessage = ParaBankReigstrationNavigate.VALIDATE_INVALID_MESSAGE.of("An internal error has").resolveFor(actor).getText();
 
                     actor.attemptsTo(
-                            Ensure.that(actualMessage)
-                                    .contains("The username and")
+                            Ensure.that(actualMessage).contains("An internal error has")
                     );
-
                     Serenity.recordReportData()
                             .withTitle("User Login Error Message")
                             .andContents("Displayed message: " + actualMessage);
                 }
         );
     }
-
 
     public static Performable enterAccountFirstName(String AccountFirstName) {
         return Task.where("Enter Account First Name",
@@ -75,7 +73,6 @@ public class ParaBankRegistrationActions {
                             .withTitle("Remember Account First Name")
                             .andContents("Account First Name: " + rememberedAccountFirstName);
                 }
-
         );
     }
 
@@ -227,6 +224,22 @@ public class ParaBankRegistrationActions {
                     Serenity.recordReportData()
                             .withTitle("Remember Credential Confirm Password")
                             .andContents("Credential Confirm Password: " + rememberedcredentialConfirmPassword);
+                }
+        );
+    }
+
+    public static Performable verifyLoginUserName() {
+        return Task.where("Verify Login User Name",
+                actor -> {
+                        String verifyLoginUserName = ParaBankReigstrationNavigate.VERIFY_LOGIN_USER_NAME.of("Donald Trump").resolveFor(actor).getText();
+
+                        actor.attemptsTo(
+                                Ensure.that(verifyLoginUserName).contains("Donald Trump")
+                        );
+                        Serenity.recordReportData()
+                                .withTitle("User Login Name")
+                                .andContents("Displayed User Name: " + verifyLoginUserName);
+
                 }
         );
     }

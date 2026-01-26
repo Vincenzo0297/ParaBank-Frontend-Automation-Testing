@@ -20,6 +20,9 @@ Feature: TC1_Registration Form Test
     And User enter account username '<AccountUsername>'
     And User enter account password '<AccountPassword>'
     And User enter account Confirm password '<AccountConfirmPassword>'
+    Then User Click on the register button
+    And User Verify the account username
+    Then User Click on the Log Out button
 
     Examples:
       | Username | Password  | AccountUsername  | AccountPassword | AccountConfirmPassword |

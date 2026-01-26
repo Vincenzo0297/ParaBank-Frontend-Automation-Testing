@@ -52,5 +52,12 @@ public class ParaBankReigstrationNavigate {
     public static Target VALIDATE_INVALID_MESSAGE = Target.the("validate error messaga")
             .locatedBy("//*[@id=\"rightPanel\"]/p[contains(text(),'{0}')]");
 
-}
+    public static Target CLICK_REGISTER_BUTTON = Target.the("click register button")
+            .locatedBy("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input");
 
+    public static Target VERIFY_LOGIN_USER_NAME = Target.the("verify login user name")
+            .locatedBy("//div[contains(@id,'rightPanel')]/h1[contains(text(), '{0}')] ");;
+
+    public static Target CLICK_ON_LOG_OUT_BUTTON = Target.the("click logout button")
+            .locatedBy("//*[@id=\"leftPanel\"]/ul/li[8]/a");
+}

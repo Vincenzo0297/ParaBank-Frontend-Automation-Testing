@@ -11,7 +11,7 @@ import project.ParaBankRegistration.ParaBankReigstrationNavigate;
 
 import java.util.List;
 
-public class ParaBankDefinitions {
+public class ParaBankRegistrationDefinitions {
 
     @Given("{actor} login to the para bank page")
     public void userIsOnTheLoginPage(Actor actor) {
@@ -56,41 +56,77 @@ public class ParaBankDefinitions {
     public void userSignUpForParaBankAccount(Actor actor, List<String> AccountRegistration) {
         actor.attemptsTo(
                 ParaBankRegistrationActions.enterAccountFirstName(AccountRegistration.get(0)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountLastName(AccountRegistration.get(1)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountAddress(AccountRegistration.get(2)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountCity(AccountRegistration.get(3)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountState(AccountRegistration.get(4)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountZipCode(AccountRegistration.get(5)),
+                WaitSeconds.Now(),
                 ParaBankRegistrationActions.enterAccountPhone(AccountRegistration.get(6)),
-                ParaBankRegistrationActions.enterAccountSSN(AccountRegistration.get(7))
+                WaitSeconds.Now(),
+                ParaBankRegistrationActions.enterAccountSSN(AccountRegistration.get(7)),
+                WaitSeconds.Now()
         );
     }
 
     @And("{actor} enter account username {string}")
     public void userEnterAccountUsernameAccountUsername(Actor actor, String CredentialUserName) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialUserName(CredentialUserName)
+                ParaBankRegistrationActions.enterCredentialUserName(CredentialUserName),
+                WaitSeconds.Now()
         );
     }
 
     @And("{actor} enter account password {string}")
     public void userEnterAccountPasswordAccountPassword(Actor actor, String CredentialPassword) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialPassword(CredentialPassword)
+                ParaBankRegistrationActions.enterCredentialPassword(CredentialPassword),
+                WaitSeconds.Now()
         );
     }
 
     @And("{actor} enter account Confirm password {string}")
     public void userEnterAccountConfirmPasswordAccountConfirmPassword(Actor actor, String CredentialConfirmPassword) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialConfirmPassword(CredentialConfirmPassword)
+                ParaBankRegistrationActions.enterCredentialConfirmPassword(CredentialConfirmPassword),
+                WaitSeconds.Now()
         );
     }
 
     @Then("{actor} validate invalid user login")
     public void userValidateInvalidUserLogin(Actor actor) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.validateUserLogin()
+                ParaBankRegistrationActions.validateUserLogin(),
+                WaitSeconds.Now()
+        );
+    }
+
+    @Then("{actor} Click on the register button")
+    public void userClickOnTheRegisterButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(ParaBankReigstrationNavigate.CLICK_REGISTER_BUTTON),
+                WaitSeconds.Now()
+        );
+    }
+
+    @And("{actor} Verify the account username")
+    public void userVerifyTheAccountUsername(Actor actor) {
+        actor.attemptsTo(
+                ParaBankRegistrationActions.verifyLoginUserName(),
+                WaitSeconds.Now()
+        );
+    }
+
+    @Then("{actor} Click on the Log Out button")
+    public void userClickOnTheLogOutButton(Actor actor) {
+        actor.attemptsTo(
+                Click.on(ParaBankReigstrationNavigate.CLICK_ON_LOG_OUT_BUTTON),
+                WaitSeconds.Now()
         );
     }
 }
