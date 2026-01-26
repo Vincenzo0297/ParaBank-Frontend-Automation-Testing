@@ -1,4 +1,4 @@
-package project.ParaBankOpenNewAccount;
+package project.ParaBank.ParaBankOpenNewAccount;
 
 import net.serenitybdd.screenplay.targets.Target;
 

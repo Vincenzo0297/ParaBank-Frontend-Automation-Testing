@@ -1,4 +1,4 @@
-package project.ParaBankOpenNewAccount;
+package project.ParaBank.ParaBankOpenNewAccount;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Performable;
@@ -28,15 +28,16 @@ public class ParaBankOpenNewAccountAction {
     public static Performable SelectNewAccountNumber(String newAccountNumber) {
         return Task.where("Select new account number to transfer",
                 actor -> {
-                            Target SelectedNewAccountNumber = ParaBankOpenNewAccountNavigate.SELECT_NEW_ACCOUNT_NUMBER_FLEXI.of(newAccountNumber);
-                            actor.attemptsTo(
+                        Target SelectedNewAccountNumber = ParaBankOpenNewAccountNavigate.SELECT_NEW_ACCOUNT_NUMBER_FLEXI.of(newAccountNumber);
+
+                        actor.attemptsTo(
                                     Click.on(SelectedNewAccountNumber)
-                            );
-                            actor.remember("newAccountNumber", newAccountNumber);
-                            String rememberedNewAccountNumber = actor.recall("newAccountNumber");
-                            Serenity.recordReportData()
-                                    .withTitle("Remember New Account Number")
-                                    .andContents("New Account Number: " + rememberedNewAccountNumber);
+                        );
+                        actor.remember("newAccountNumber", newAccountNumber);
+                        String rememberedNewAccountNumber = actor.recall("newAccountNumber");
+                        Serenity.recordReportData()
+                                .withTitle("Remember New Account Number")
+                                .andContents("New Account Number: " + rememberedNewAccountNumber);
                 }
         );
     }

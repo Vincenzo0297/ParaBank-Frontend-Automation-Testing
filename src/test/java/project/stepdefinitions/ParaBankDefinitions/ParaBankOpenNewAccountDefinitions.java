@@ -1,12 +1,12 @@
-package project.stepdefinitions;
+package project.stepdefinitions.ParaBankDefinitions;
 
 import UilityFunctions.WaitSeconds;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
-import project.ParaBankOpenNewAccount.ParaBankOpenNewAccountAction;
-import project.ParaBankOpenNewAccount.ParaBankOpenNewAccountNavigate;
+import project.ParaBank.ParaBankOpenNewAccount.ParaBankOpenNewAccountAction;
+import project.ParaBank.ParaBankOpenNewAccount.ParaBankOpenNewAccountNavigate;
 
 public class ParaBankOpenNewAccountDefinitions {
 

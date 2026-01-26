@@ -1,4 +1,4 @@
-package project.stepdefinitions;
+package project.stepdefinitions.ParaBankDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -6,8 +6,8 @@ import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import UilityFunctions.WaitSeconds;
-import project.ParaBankRegistration.ParaBankRegistrationActions;
-import project.ParaBankRegistration.ParaBankReigstrationNavigate;
+import project.ParaBank.ParaBankRegistration.ParaBankRegistrationActions;
+import project.ParaBank.ParaBankRegistration.ParaBankReigstrationNavigate;
 
 import java.util.List;
 

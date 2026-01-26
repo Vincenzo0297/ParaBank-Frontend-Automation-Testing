@@ -1,4 +1,4 @@
-package project.ParaBankRegistration;
+package project.ParaBank.ParaBankRegistration;
 
 import net.serenitybdd.screenplay.targets.Target;
 
