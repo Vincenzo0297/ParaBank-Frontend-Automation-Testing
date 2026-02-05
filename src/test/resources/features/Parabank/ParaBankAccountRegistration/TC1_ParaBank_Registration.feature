@@ -6,7 +6,7 @@ Feature: TC1_Registration Form Test
     Then User input username '<Username>'
     And User input password '<Password>'
     And User Click on the Login button
-    #Then User validate invalid user login
+    Then User validate invalid user login
     And User Click on the Registration button
     Then User sign up for ParaBank Account
       | Jason           |

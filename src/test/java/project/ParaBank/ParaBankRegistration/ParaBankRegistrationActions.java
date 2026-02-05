@@ -48,10 +48,10 @@ public class ParaBankRegistrationActions {
     public static Performable validateUserLogin() {
         return Task.where("{0} verify the invalid user login message",
                 actor -> {
-                        String actualMessage = ParaBankReigstrationNavigate.VALIDATE_INVALID_MESSAGE.of("An internal error has").resolveFor(actor).getText();
+                        String actualMessage = ParaBankReigstrationNavigate.VALIDATE_INVALID_MESSAGE.of("The username and password could not be verified").resolveFor(actor).getText();
 
                         actor.attemptsTo(
-                                Ensure.that(actualMessage).contains("An internal error has")
+                                Ensure.that(actualMessage).contains("The username and password could not be verified")
                         );
                         Serenity.recordReportData()
                                 .withTitle("User Login Error Message")
