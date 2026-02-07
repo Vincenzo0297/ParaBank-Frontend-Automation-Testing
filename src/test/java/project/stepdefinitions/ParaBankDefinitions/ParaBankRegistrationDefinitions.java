@@ -6,9 +6,9 @@ import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import UilityFunctions.WaitSeconds;
+import UilityFunctions.CSVDataReader;
 import project.ParaBank.ParaBankRegistration.ParaBankRegistrationActions;
 import project.ParaBank.ParaBankRegistration.ParaBankReigstrationNavigate;
-
 import java.util.List;
 
 public class ParaBankRegistrationDefinitions {
@@ -24,7 +24,7 @@ public class ParaBankRegistrationDefinitions {
     @Then("{actor} input username {string}")
     public void userInputUsernameUsername(Actor actor, String username) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterUserName(username),
+                ParaBankRegistrationActions.enterUserName(CSVDataReader.actor(username)),
                 WaitSeconds.Now()
         );
     }
@@ -32,7 +32,7 @@ public class ParaBankRegistrationDefinitions {
     @And("{actor} input password {string}")
     public void userInputPassword(Actor actor, String password) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterPassword(password),
+                ParaBankRegistrationActions.enterPassword(CSVDataReader.actor(password)),
                 WaitSeconds.Now()
         );
     }
@@ -55,21 +55,21 @@ public class ParaBankRegistrationDefinitions {
     @Then("{actor} sign up for ParaBank Account")
     public void userSignUpForParaBankAccount(Actor actor, List<String> AccountRegistration) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterAccountFirstName(AccountRegistration.get(0)),
+                ParaBankRegistrationActions.enterAccountFirstName(CSVDataReader.actor(AccountRegistration.get(0))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountLastName(AccountRegistration.get(1)),
+                ParaBankRegistrationActions.enterAccountLastName(CSVDataReader.actor(AccountRegistration.get(1))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountAddress(AccountRegistration.get(2)),
+                ParaBankRegistrationActions.enterAccountAddress(CSVDataReader.actor(AccountRegistration.get(2))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountCity(AccountRegistration.get(3)),
+                ParaBankRegistrationActions.enterAccountCity(CSVDataReader.actor(AccountRegistration.get(3))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountState(AccountRegistration.get(4)),
+                ParaBankRegistrationActions.enterAccountState(CSVDataReader.actor(AccountRegistration.get(4))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountZipCode(AccountRegistration.get(5)),
+                ParaBankRegistrationActions.enterAccountZipCode(CSVDataReader.actor(AccountRegistration.get(5))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountPhone(AccountRegistration.get(6)),
+                ParaBankRegistrationActions.enterAccountPhone(CSVDataReader.actor(AccountRegistration.get(6))),
                 WaitSeconds.Now(),
-                ParaBankRegistrationActions.enterAccountSSN(AccountRegistration.get(7)),
+                ParaBankRegistrationActions.enterAccountSSN(CSVDataReader.actor(AccountRegistration.get(7))),
                 WaitSeconds.Now()
         );
     }
@@ -77,7 +77,7 @@ public class ParaBankRegistrationDefinitions {
     @And("{actor} enter account username {string}")
     public void userEnterAccountUsernameAccountUsername(Actor actor, String CredentialUserName) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialUserName(CredentialUserName),
+                ParaBankRegistrationActions.enterCredentialUserName(CSVDataReader.actor(CredentialUserName)),
                 WaitSeconds.Now()
         );
     }
@@ -85,7 +85,7 @@ public class ParaBankRegistrationDefinitions {
     @And("{actor} enter account password {string}")
     public void userEnterAccountPasswordAccountPassword(Actor actor, String CredentialPassword) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialPassword(CredentialPassword),
+                ParaBankRegistrationActions.enterCredentialPassword(CSVDataReader.actor(CredentialPassword)),
                 WaitSeconds.Now()
         );
     }
@@ -93,7 +93,7 @@ public class ParaBankRegistrationDefinitions {
     @And("{actor} enter account Confirm password {string}")
     public void userEnterAccountConfirmPasswordAccountConfirmPassword(Actor actor, String CredentialConfirmPassword) {
         actor.attemptsTo(
-                ParaBankRegistrationActions.enterCredentialConfirmPassword(CredentialConfirmPassword),
+                ParaBankRegistrationActions.enterCredentialConfirmPassword(CSVDataReader.actor(CredentialConfirmPassword)),
                 WaitSeconds.Now()
         );
     }

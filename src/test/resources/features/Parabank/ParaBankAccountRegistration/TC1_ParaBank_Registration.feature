@@ -6,17 +6,17 @@ Feature: TC1_Registration Form Test
     Then User input username '<Username>'
     And User input password '<Password>'
     And User Click on the Login button
-    #Then User validate invalid user login
+    Then User validate invalid user login
     And User Click on the Registration button
     Then User sign up for ParaBank Account
-      | Jason           |
-      | Joe             |
-      | New York ave 1  |
-      | Helloworld      |
-      | California      |
-      | 1234567         |
-      | 8765432123      |
-      | 437-02-2223     |
+      | TC-1-Register-Firstname  |
+      | TC-1-Register-Lastname   |
+      | TC-1-Register-Address    |
+      | TC-1-Register-City       |
+      | TC-1-Register-State      |
+      | TC-1-Register-ZipCode    |
+      | TC-1-Register-Phone      |
+      | TC-1-Register-SSN        |
     And User enter account username '<AccountUsername>'
     And User enter account password '<AccountPassword>'
     And User enter account Confirm password '<AccountConfirmPassword>'
@@ -25,8 +25,8 @@ Feature: TC1_Registration Form Test
     Then User Click on the Log Out button
 
     Examples:
-      | Username | Password  | AccountUsername  | AccountPassword | AccountConfirmPassword |
-      | Admin    | admin123  |  Donald Trump    |  User01         |      User01            |
+      | Username      | Password       |  AccountUsername        |  AccountPassword         | AccountConfirmPassword        |
+      | TC-1-UserName | TC-1-Password  |  TC-1-Account-Username  |  TC-1-Account-Password   | TC-1-Account-ConfirmPassword  |
 
     # run in terminal (Command Prompt)
     # mvn clean verify -Dcucumber.filter.tags=@login
