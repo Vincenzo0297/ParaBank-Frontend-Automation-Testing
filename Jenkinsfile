@@ -1,22 +1,36 @@
-
 pipeline {
   agent none
+
   stages {
-    stage('Back-end') {
+
+    stage('Backend - Cucumber') {
       agent {
-        docker { image 'maven:3.8.1-adoptopenjdk-11' }
+        docker {
+          image 'maven:3.8.1-adoptopenjdk-11'
+          args '-v /root/.m2:/root/.m2'
+        }
       }
       steps {
-        sh 'mvn --version'
+        sh 'mvn clean test'
       }
     }
-    stage('Front-end') {
+
+    stage('Frontend') {
       agent {
-        docker { image 'node:16-alpine' }
+        docker {
+          image 'node:16-alpine'
+        }
       }
       steps {
         sh 'node --version'
+        sh 'npm --version'
       }
+    }
+  }
+
+  post {
+    always {
+      archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
     }
   }
 }
