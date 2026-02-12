@@ -2,6 +2,6 @@ FROM eclipse-temurin:8-jdk-alpine
 
 EXPOSE 8080
 
-COPY target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
+COPY target/cucumber-starter-1.0.0-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
