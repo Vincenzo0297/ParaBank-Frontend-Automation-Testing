@@ -29,11 +29,12 @@ pipeline {
 
     stage('Deploy Container') {
       steps {
+        echo 'Stopping old container (if exists)...'
         bat 'docker stop docker-app || exit 0'
         bat 'docker rm docker-app || exit 0'
-        bat 'docker run -d -p 8080:8080 --name docker-app docker-jenkins-app'
+        echo 'Running new container...'
+        bat 'docker run -d -p 8080:8080 --name docker-app vincenzo0978/frontend-docker:tagname'
       }
     }
-
   }
 }
