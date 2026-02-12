@@ -9,11 +9,11 @@ pipeline {
     }
     stage('Test'){
       steps{
-        bat 'mvn -B clean install'
+        bat 'mvn -B clean verify -Dcucumber.filter.tags=@TC5_PARABANK_Registration'
         cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
       }
     }
-    stage('Archive'){
+    stage('Frontend-Automation'){
       steps{
         archiveArtifacts 'target/*.jar'
       }
