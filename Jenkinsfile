@@ -1,36 +1,22 @@
 pipeline {
-  agent none
+  agent any
 
   stages {
-
-    stage('Backend - Cucumber') {
-      agent {
-        docker {
-          image 'maven:3.8.1-adoptopenjdk-11'
-          args '-v /root/.m2:/root/.m2'
-        }
-      }
+    stage('Build') {
       steps {
-        sh 'mvn clean test'
+        bat 'mvn -B compile'
       }
     }
-
-    stage('Frontend') {
-      agent {
-        docker {
-          image 'node:16-alpine'
-        }
-      }
-      steps {
-        sh 'node --version'
-        sh 'npm --version'
+    stage('Test'){
+      steps{
+        bat 'mvn -B clean verify -Dcucumber.filter.tags=@TC5_PARABANK_Registration'
+        cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
       }
     }
-  }
-
-  post {
-    always {
-      archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+    stage('Archive'){
+      steps{
+        archiveArtifacts 'target/*.jar'
+      }
     }
   }
 }
