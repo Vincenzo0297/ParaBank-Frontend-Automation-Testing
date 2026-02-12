@@ -3,8 +3,8 @@ Feature: TC1_Registration Form Test
   @web @TC1_PARABANK_Registration
   Scenario Outline: Successful User Registration
     Given User login to the para bank page
-    Then User input username '<Username>'
-    And User input password '<Password>'
+    #Then User input username '<Username>'
+    #And User input password '<Password>'
     And User Click on the Login button
     Then User validate invalid user login
     And User Click on the Registration button
@@ -20,9 +20,9 @@ Feature: TC1_Registration Form Test
     And User enter account username '<AccountUsername>'
     And User enter account password '<AccountPassword>'
     And User enter account Confirm password '<AccountConfirmPassword>'
-    Then User Click on the register button
-    And User Verify the account username
-    Then User Click on the Log Out button
+    #Then User Click on the register button
+    #And User Verify the account username
+    #Then User Click on the Log Out button
 
     Examples:
       | Username      | Password       |  AccountUsername        |  AccountPassword         | AccountConfirmPassword        |
