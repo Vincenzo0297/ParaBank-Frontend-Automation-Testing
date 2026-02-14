@@ -113,7 +113,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>your.package.Main</mainClass>
+                            <mainClass>your.package.test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
