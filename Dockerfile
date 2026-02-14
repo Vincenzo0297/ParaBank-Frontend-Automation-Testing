@@ -1,5 +1,13 @@
 FROM eclipse-temurin:8-jdk-alpine
+
+# Install Maven
+RUN apk add --no-cache maven bash git
+
 EXPOSE 8080
-COPY target/cucumber-starter-1.0.0-SNAPSHOT.jar app.jar
+
+WORKDIR /app
+
+COPY . .
+
+# Run tests on container start
 CMD ["mvn", "verify"]
-#ENTRYPOINT ["java","-jar","/app.jar"]
