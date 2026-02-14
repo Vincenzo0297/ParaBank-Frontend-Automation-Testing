@@ -1,9 +1,4 @@
-FROM maven:3.9.9-eclipse-temurin-8
-
-WORKDIR /app
-
-COPY . .
-
-RUN mvn clean package -DskipTests
-
-CMD ["mvn", "verify"]
+FROM eclipse-temurin:8-jdk-alpine
+#EXPOSE 8080
+COPY target/cucumber-starter-1.0.0-SNAPSHOT.jar app.jar
+#ENTRYPOINT ["java","-jar","/app.jar"]
