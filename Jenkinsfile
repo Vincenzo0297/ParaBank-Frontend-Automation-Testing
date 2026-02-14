@@ -33,7 +33,7 @@ pipeline {
         bat 'docker stop docker-app || exit 0'
         bat 'docker rm docker-app || exit 0'
         echo 'Running new container...'
-        bat 'docker run -d -p 8084:8080 --name docker-app vincenzo0978/frontend-docker:tagname'
+        bat 'docker run -d -p 8081:8080 --name docker-app vincenzo0978/frontend-docker:tagname'
       }
     }
   }
