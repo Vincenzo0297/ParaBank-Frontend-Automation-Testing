@@ -1,13 +1,6 @@
 # Use Maven + Java 11 image (Debian-based)
 FROM maven:3.9.9-eclipse-temurin-11
 
-# Install extra tools (bash, git, curl)
-RUN apt-get update && apt-get install -y \
-    bash \
-    git \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
 # Set working directory inside container
 WORKDIR /app
 
@@ -15,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Run Maven tests when container starts
-CMD ["mvn", "clean", "verify"]
+CMD ["mvn", "verify"]
 
 
 #EXPOSE 8080
