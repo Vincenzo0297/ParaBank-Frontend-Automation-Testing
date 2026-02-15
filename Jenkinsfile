@@ -33,7 +33,7 @@ pipeline {
         bat 'docker stop docker-app || exit 0'
         bat 'docker rm docker-app || exit 0'
         echo 'Running new container...'
-        bat 'docker run -d --name docker-app docker-jenkins-app'
+        bat 'docker run --rm --name docker-app my-images'
       }
     }
   }
