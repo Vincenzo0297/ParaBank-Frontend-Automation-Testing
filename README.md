@@ -75,10 +75,22 @@ What is the CI/CD Pipeline?
 
 
 What does Docker do?
+Docker is a containerization platform that lets you package an application together with everything it needs to run — code, runtime, libraries, and dependencies — into a lightweight unit called a container.
 
 
+Docker:
+📦 Packages your app with its dependencies
+🚀 Runs it consistently on any machine
+🔁 Ensures “it works on my machine” is no longer a problem
+⚡ Starts much faster than virtual machines
+
+What is a Container?
+It is a lightweight, isolated environment that runs your application. It shares the host OS kernel (so it’s faster and lighter than a VM), but still keeps apps isolated from each other.
 
 
+Summary:
+1) Docker is a container platform used to run applications consistently, while Jenkins is a CI/CD automation tool. They serve different purposes but are often used together. 
 
+2) Jenkins automates the build, test, and deployment process, and Docker provides a consistent environment to run the application.
 
 
