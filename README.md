@@ -9,6 +9,6 @@ Continous Delivery
 - Build on Continous Intergration, automating the software release process so developers
   can deploy application into production.
 
-
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
