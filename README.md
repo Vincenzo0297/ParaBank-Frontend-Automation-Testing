@@ -9,9 +9,6 @@ Continous Delivery
 - Build on Continous Intergration, automating the software release process so developers
   can deploy application into production.
 
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
+
 
 
