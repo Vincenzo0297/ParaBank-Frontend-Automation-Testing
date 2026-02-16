@@ -1,4 +1,5 @@
-What is the DevOps Lifecycle
+What is the DevOps Lifecycle?
+
 Devops is a framework that collaborate between Development and Operations teams. 
 
 
@@ -39,9 +40,44 @@ The 8 phases of the DevOps LifeCycle
 8) Monitor: Continuous monitoring tracks application performance, identifies issues, and gathers user feedback.
 
 
+
+What is the Jenkin Pipeline?
+
+It is a suite of plugins that allows to define and automate CI/CD process as code.
+
+Instead of configuring build steps manually in the UI, you write your build, test, and deployment process in a file called a Jenkinsfile.
+
+A Jenkins Pipeline automates steps which helps to automate software delivery in a repeatable and version-controlled way.:
+1. Pulling code from Git
+2. Building the application
+3. Running tests
+4. Packaging artifacts
+5. Deploying to staging/production
+
+
+🔹 Key Concepts
+1. Pipeline → The entire CI/CD workflow
+2. Stage → A major phase (Build, Test, Deploy)
+3. Step → A single task inside a stage
+4. Agent → Where the pipeline runs (node/container)
+5. Jenkinsfile → File that defines the pipeline
+
+
+Summary:
+Ensure all pipeline stages are executed automatically.
+
+
 What is the CI/CD Pipeline?
 
 ![alt text](https://i.ytimg.com/vi/PKcGy9oPVXg/maxresdefault.jpg)
+
+
+
+
+What does Docker do?
+
+
+
 
 
 
